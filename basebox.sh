@@ -26,6 +26,9 @@ if ! [ -L "/var/www/html/${PROJECT}" ]; then
   ln -fs "/vagrant/${PROJECT}" "/var/www/html/${PROJECT}"
 fi
 
+# Let vagrant own /usr/local.
+sudo chown -R vagrant:root /usr/local/
+
 # Install PHP and base required modules.
 apt-get -y install php5 \
                    php5-cli \
