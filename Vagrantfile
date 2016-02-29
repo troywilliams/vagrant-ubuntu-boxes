@@ -39,5 +39,6 @@ Vagrant.configure(2) do |config|
      vb.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
   end
 
+  # Basebox shell provision script.
   config.vm.provision "shell", path: "basebox.sh", args: ENV["PROJECT"]
 end

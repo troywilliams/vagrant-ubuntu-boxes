@@ -77,6 +77,9 @@ echo "mysql-server-5.6 mysql-server/root_password_again password root" | debconf
 apt-get install -y mysql-server-5.6 \
                    php5-mysql
 
+# Install Ruby, probably already installed.
+sudo apt-get -y install ruby
+
 # Install Git.
 sudo apt-get -y install git
 
@@ -84,9 +87,22 @@ sudo apt-get -y install git
 curl -s https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
+# https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server
+# Add NodeSource to get a more recent version.
+# curl -sL https://deb.nodesource.com/setup | sudo bash -
 # Install Node.
 sudo apt-get -y install nodejs
+sudo apt-get -y install build-essential
 sudo apt-get -y install npm
+
+# Install Sass.
+sudo gem install sass
+
+#sudo npm install -g gulp
+#sudo npm install -g gulp-cli
+#sudo npm install -g gulp-util
+#sudo npm install -g gulp-sass
+#sudo npm install -g browser-sync
 
 sudo service apache2 reload
 
