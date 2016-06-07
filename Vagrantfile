@@ -41,4 +41,7 @@ Vagrant.configure(2) do |config|
 
   # Basebox shell provision script.
   config.vm.provision "shell", path: "basebox.sh", args: ENV["PROJECT"]
+
+  # Moodle setup.
+  config.vm.provision "shell", path: "moodle.sh", args: ENV["PROJECT"]
 end
